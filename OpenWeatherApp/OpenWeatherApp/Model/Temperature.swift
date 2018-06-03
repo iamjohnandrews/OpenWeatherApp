@@ -1,5 +1,5 @@
 //
-//  WeatherModels.swift
+//  Temperature.swift
 //  OpenWeatherApp
 //
 //  Created by Andrews, John L. on 6/3/18.
@@ -8,8 +8,18 @@
 
 import Foundation
 
-
 struct Temperature {
+  enum Parse: String {
+    case temp
+    case tempMin = "temp_min"
+    case tempMax = "temp_max"
+    case pressure
+    case seaLevel = "sea_level"
+    case groundLevel = "grnd_level"
+    case humidity
+    case kf = "temp_kf"
+  } 
+  
   var temp: Float 
   var tempMin: Float
   var tempMax: Float
@@ -36,32 +46,5 @@ struct Temperature {
     self.groundLevel = groundLevel
     self.humidity = humidity
     self.kf = kf
-  }
-}
-
-struct Weather {
-  let id: Int
-  var main: String
-  var description: String
-  var icon: String
-  
-  init(id: Int,
-       main: String,
-       description: String,
-       icon: String) {
-    self.id = id
-    self.main = main
-    self.description = description
-    self.icon = icon
-  }
-}
-
-struct Wind {
-  var speed: Float
-  var degrees: Float
-  
-  init(speed: Float, degrees: Float) {
-    self.speed = speed
-    self.degrees = degrees
   }
 }
