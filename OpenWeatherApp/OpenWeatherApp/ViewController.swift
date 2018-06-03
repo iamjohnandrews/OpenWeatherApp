@@ -7,19 +7,30 @@
 //
 
 import UIKit
-
+// http://samples.openweathermap.org/data/2.5/forecast?id=524901&appid=a2270a4ddf2ca135c28260c4d8083169
 class ViewController: UIViewController {
+  let sharedSession = URLSession.shared
+  let url = URL(string: "http://samples.openweathermap.org/data/2.5/forecast?id=524901&appid=a2270a4ddf2ca135c28260c4d8083169")!
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-  }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
 
 
+  func getWeather() {
+    let task = sharedSession.dataTask(with: url) { [unowned self] (data, response, error) in
+      if let error = error {
+        
+      } else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
+        
+      }
+    }
+    task.resume()
+  }
+  
+  func updateModelObjects() {
+    
+  }
 }
 

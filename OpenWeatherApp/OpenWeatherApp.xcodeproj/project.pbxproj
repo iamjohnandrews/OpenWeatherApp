@@ -14,6 +14,7 @@
 		ECD28D6B20C2031E00C3FEF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECD28D6920C2031E00C3FEF9 /* LaunchScreen.storyboard */; };
 		ECD28D7620C2031E00C3FEF9 /* OpenWeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD28D7520C2031E00C3FEF9 /* OpenWeatherAppTests.swift */; };
 		ECD28D8120C2031E00C3FEF9 /* OpenWeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD28D8020C2031E00C3FEF9 /* OpenWeatherAppUITests.swift */; };
+		ECD28D9020C48E4000C3FEF9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECD28D8F20C48E4000C3FEF9 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		ECD28D7C20C2031E00C3FEF9 /* OpenWeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenWeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECD28D8020C2031E00C3FEF9 /* OpenWeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherAppUITests.swift; sourceTree = "<group>"; };
 		ECD28D8220C2031E00C3FEF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECD28D8F20C48E4000C3FEF9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECD28D9020C48E4000C3FEF9 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 				ECD28D7420C2031E00C3FEF9 /* OpenWeatherAppTests */,
 				ECD28D7F20C2031E00C3FEF9 /* OpenWeatherAppUITests */,
 				ECD28D5E20C2031E00C3FEF9 /* Products */,
+				ECD28D8E20C48E4000C3FEF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +127,14 @@
 				ECD28D8220C2031E00C3FEF9 /* Info.plist */,
 			);
 			path = OpenWeatherAppUITests;
+			sourceTree = "<group>";
+		};
+		ECD28D8E20C48E4000C3FEF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECD28D8F20C48E4000C3FEF9 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
