@@ -15,6 +15,7 @@
 		ECD28D7620C2031E00C3FEF9 /* OpenWeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD28D7520C2031E00C3FEF9 /* OpenWeatherAppTests.swift */; };
 		ECD28D8120C2031E00C3FEF9 /* OpenWeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD28D8020C2031E00C3FEF9 /* OpenWeatherAppUITests.swift */; };
 		ECD28D9020C48E4000C3FEF9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECD28D8F20C48E4000C3FEF9 /* CoreLocation.framework */; };
+		ECD28D9320C49FE400C3FEF9 /* WeatherModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD28D9220C49FE400C3FEF9 /* WeatherModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		ECD28D8020C2031E00C3FEF9 /* OpenWeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherAppUITests.swift; sourceTree = "<group>"; };
 		ECD28D8220C2031E00C3FEF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECD28D8F20C48E4000C3FEF9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		ECD28D9220C49FE400C3FEF9 /* WeatherModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				ECD28D6020C2031E00C3FEF9 /* AppDelegate.swift */,
 				ECD28D6220C2031E00C3FEF9 /* ViewController.swift */,
+				ECD28D9120C49FBE00C3FEF9 /* Model */,
 				ECD28D6420C2031E00C3FEF9 /* Main.storyboard */,
 				ECD28D6720C2031E00C3FEF9 /* Assets.xcassets */,
 				ECD28D6920C2031E00C3FEF9 /* LaunchScreen.storyboard */,
@@ -135,6 +138,14 @@
 				ECD28D8F20C48E4000C3FEF9 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ECD28D9120C49FBE00C3FEF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ECD28D9220C49FE400C3FEF9 /* WeatherModels.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECD28D6320C2031E00C3FEF9 /* ViewController.swift in Sources */,
+				ECD28D9320C49FE400C3FEF9 /* WeatherModels.swift in Sources */,
 				ECD28D6120C2031E00C3FEF9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
