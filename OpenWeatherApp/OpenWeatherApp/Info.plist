@@ -8,7 +8,13 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>The app needs to use your location to determine availability in your area.</string>
+	<string>The app needs to use your location to determine weather in your area.</string>
+  <key>NSLocationAlwaysUsageDescription</key>
+  <string>The app needs to use your location to determine weather in your area</string>
+  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  <string>The app needs to use your location to determine weather in your area</string>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>The app needs to use your location to determine weather in your area</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
