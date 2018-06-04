@@ -27,7 +27,6 @@ class WeatherCell: UITableViewCell {
   }
   
   func setContent(with weatherData: WeatherData) {
-    print("WeatherCell incoming data: \(weatherData)")
     temperature.text = String(weatherData.1.temp)
     maxTemp.text = String(weatherData.1.tempMax)
     minTemp.text = String(weatherData.1.tempMin)

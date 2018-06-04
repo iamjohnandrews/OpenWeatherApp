@@ -33,7 +33,6 @@ class ViewController: UIViewController {
   
   let sectionHeaderHeight: CGFloat = 30
   var weatherDataArray = [WeatherData]()
-  var weatherDataDict = [TableSection: [WeatherData]]()
   
   var currentLocation: Location? {
     didSet {
@@ -72,7 +71,8 @@ class ViewController: UIViewController {
     spinner.hidesWhenStopped = true
   }
   
-  func getWeather(for type: RequestType) {
+  // MARK: Private Functions
+  private func getWeather(for type: RequestType) {
     guard let location = currentLocation, let url = apiURL(type.rawValue, location.0, location.1) else {
       displayErrorMessage()
       return
@@ -87,7 +87,7 @@ class ViewController: UIViewController {
     task.resume()
   }
   
-  func parseJSON(_ data: Data, for type: RequestType) {
+  private func parseJSON(_ data: Data, for type: RequestType) {
     do {
       let serializedData = try JSONSerialization.jsonObject(with: data) as! JSONdata
       if type == .currentWeather {
@@ -97,10 +97,10 @@ class ViewController: UIViewController {
       }      
     } catch let error {
       handle(error)
-      print("WTF Parsing error: \(error.localizedDescription)")
     }
   }
   private func createForecastWeatherData(from array: [AnyObject]) {
+    // assume backend services delivers sorted array to client
     for element in array {
       if let json = element as? JSONdata {
         createWeatherData(from: json, for: .fiveDayForecast)
@@ -131,14 +131,12 @@ class ViewController: UIViewController {
     }
   }
   
-  func handle(_ error: Error) {
+  private func handle(_ error: Error) {
     // TODO: add error handling
   }
   
-  func displayErrorMessage() {
+  private func displayErrorMessage() {
     // TODO: Share error with user
-    print("Error: displayErrorMessage called")
-    print("Whats inside weatherDataArray: \(weatherDataArray)")
   }
   
   private func setupCoreLocation() {
