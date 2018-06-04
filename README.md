@@ -1,8 +1,4 @@
 # OpenWeatherApp
-Application that displays current weather information and also a forecast for 5 days
-
-# Project - *Weather App*
-
 **Weather App** is an iOS application that displays current weather information and also a forecast for 5 days. The app utilizes [OpenWeatherMap REST API](https://api.openweathermap.org).
 
 ## Requirements
@@ -26,8 +22,6 @@ The following **assumptions** were made during development:
 * Make code modular in order to more easily read and test
 
 ## Video Walkthrough
-
-Here's a walkthrough of implemented user stories:
 
 ![](https://imgur.com/vlTKchy.gif)
 
