@@ -36,7 +36,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 * Download project from gitHub and run
 
 ## Suggestions to improve
-* Error handling, both UI to provide user feedback and unseen
+* Error handling, both under the hood and UI (to provide user feedback)
 * Add Unit Tests
+* Add UI Tests
 * Improve Design
 
