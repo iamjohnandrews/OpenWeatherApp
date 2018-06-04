@@ -9,10 +9,6 @@
 import Foundation
 
 struct Wind {
-  enum Parse: String {
-    case id
-    case degrees = "deg"
-  }
   var speed: Float
   var degrees: Float
   

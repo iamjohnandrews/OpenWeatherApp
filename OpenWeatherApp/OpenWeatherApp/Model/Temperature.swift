@@ -8,18 +8,7 @@
 
 import Foundation
 
-struct Temperature {
-  enum Parse: String {
-    case temp
-    case tempMin = "temp_min"
-    case tempMax = "temp_max"
-    case pressure
-    case seaLevel = "sea_level"
-    case groundLevel = "grnd_level"
-    case humidity
-    case kf = "temp_kf"
-  } 
-  
+struct Temperature {  
   var temp: Float 
   var tempMin: Float
   var tempMax: Float

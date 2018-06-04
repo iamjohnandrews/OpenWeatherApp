@@ -8,14 +8,7 @@
 
 import Foundation
 
-struct Weather {
-  enum Parse: String {
-    case id
-    case main
-    case description
-    case icon
-  }
-  
+struct Weather {  
   let id: Int
   var main: String
   var description: String
