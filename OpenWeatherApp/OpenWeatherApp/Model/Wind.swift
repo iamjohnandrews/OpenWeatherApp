@@ -16,4 +16,12 @@ struct Wind {
     self.speed = speed
     self.degrees = degrees
   }
+  
+  static func retrieveWindObject(from json: JSONdata) -> Wind? {
+    guard let tempDict = json[Parse.wind.rawValue] as? JSONdata,
+      let speed = tempDict[Parse.speed.rawValue] as? Float,
+      let deg = tempDict[Parse.degrees.rawValue] as? Float
+      else { return nil }
+    return Wind(speed: speed, degrees: deg)
+  }
 }

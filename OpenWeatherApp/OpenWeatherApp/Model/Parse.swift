@@ -13,6 +13,7 @@ enum Parse: String {
   case main
   
   // Wind
+  case wind
   case speed
   case degrees = "deg"
   
@@ -30,5 +31,4 @@ enum Parse: String {
   case weather
   case id
   case description
-  case icon
 }

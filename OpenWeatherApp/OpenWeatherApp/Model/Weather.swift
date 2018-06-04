@@ -12,15 +12,23 @@ struct Weather {
   let id: Int
   var main: String
   var description: String
-  var icon: String
   
   init(id: Int,
        main: String,
-       description: String,
-       icon: String) {
+       description: String) {
     self.id = id
     self.main = main
     self.description = description
-    self.icon = icon
+  }
+  
+  static func retrieveWeatherObject(from json: JSONdata) -> Weather? {
+    guard let tempDict = json[Parse.weather.rawValue] as? JSONdata,
+      let id = tempDict[Parse.id.rawValue] as? Int,
+      let main = tempDict[Parse.main.rawValue] as? String,
+      let des = tempDict[Parse.description.rawValue] as? String
+      else { return nil }
+    return Weather(id: id,
+                   main: main,
+                   description: des)
   }
 }

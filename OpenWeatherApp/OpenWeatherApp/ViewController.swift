@@ -1,5 +1,5 @@
 //
-//  NetworkingViewController.swift
+//  ViewController.swift
 //  OpenWeatherApp
 //
 //  Created by Andrews, John L. on 6/1/18.
@@ -14,23 +14,21 @@ enum RequestType: String {
   case currentWeather = "weather"
   case fiveDayForecast = "forecast"
 }
-class NetworkingViewController: UIViewController {
+typealias JSONdata = [String: AnyObject]
+class ViewController: UIViewController {
   let sharedSession = URLSession.shared
   let locationManager = CLLocationManager()
   static let apiKey = "a2270a4ddf2ca135c28260c4d8083169"
-
-  typealias JSONdata = [String: Any]
-  typealias Location = (Float, Float)
-//  let currentWeatherAPI = "api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}"
-//  let fiveDayForecastAPI = "api.openweathermap.org/data/2.5/forecast?lat=35&lon=139"
   
+  typealias Location = (Float, Float)
+
   var currentLocation: Location? {
     didSet {
       guard oldValue?.0 != currentLocation?.0 && oldValue?.1 != currentLocation?.1  else { return }
-      
+
       // When user's location changes, automatically make request for both current weather and five day forecast
-      getWeather(for: .currentWeather)
-//      getWeather(for: .fiveDayForecast)
+//      getWeather(for: .currentWeather)
+      getWeather(for: .fiveDayForecast)
     }
   } 
   let apiURL: (String, Float, Float) -> URL? = { 
@@ -43,7 +41,7 @@ class NetworkingViewController: UIViewController {
     
     let latQuery = URLQueryItem(name: "lat", value: String(lat))
     let longQuery = URLQueryItem(name: "lon", value: String(long))
-    let appKeyQuery = URLQueryItem(name: "appid", value: NetworkingViewController.apiKey)
+    let appKeyQuery = URLQueryItem(name: "appid", value: ViewController.apiKey)
     urlComponents.queryItems = [latQuery, longQuery, appKeyQuery]
     
     return urlComponents.url
@@ -81,6 +79,12 @@ class NetworkingViewController: UIViewController {
   func parseJSON(_ data: Data, for type: RequestType) {
     do {
       let serializedData = try JSONSerialization.jsonObject(with: data) as! JSONdata
+//      let serializedData = try JSONSerialization.jsonObject(with: data) as! [AnyObject]
+
+      if type == .currentWeather {
+//        let currentTemperature = Temperature.retrieveTemperatureObject(from: serializedData)
+        
+      }
       print("What did I pull: \(serializedData)")
       
     } catch let error {
@@ -98,7 +102,8 @@ class NetworkingViewController: UIViewController {
   }
 }
 
-extension NetworkingViewController: CLLocationManagerDelegate {
+// MARK: CLLocationManagerDelegate
+extension ViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
 //    print("locations = \(locValue.latitude) \(locValue.longitude)")

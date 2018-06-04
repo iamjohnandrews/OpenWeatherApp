@@ -13,19 +13,19 @@ struct Temperature {
   var tempMin: Float
   var tempMax: Float
   var pressure: Float
-  var seaLevel: Float
-  var groundLevel: Float
   var humidity: Float
-  var kf: Float
+  var seaLevel: Float?
+  var groundLevel: Float?
+  var kf: Float?
   
   init(temp: Float,
        tempMin: Float,
        tempMax: Float,
        pressure: Float,
-       seaLevel: Float,
-       groundLevel: Float,
        humidity: Float,
-       kf: Float
+       seaLevel: Float?,
+       groundLevel: Float?,
+       kf: Float?
     ) {
     self.temp = temp
     self.tempMin = tempMin
@@ -35,5 +35,23 @@ struct Temperature {
     self.groundLevel = groundLevel
     self.humidity = humidity
     self.kf = kf
+  }
+  
+  static func retrieveTemperatureObject(from json: JSONdata) -> Temperature? {
+    guard let tempDict = json[Parse.main.rawValue] as? JSONdata,
+      let hum = tempDict[Parse.humidity.rawValue] as? Float,
+      let pres = tempDict[Parse.pressure.rawValue] as? Float,
+      let temp = tempDict[Parse.temp.rawValue] as? Float,
+      let max = tempDict[Parse.tempMax.rawValue] as? Float,
+      let min = tempDict[Parse.tempMin.rawValue] as? Float
+      else { return nil }
+    return Temperature(temp: temp,
+                       tempMin: min,
+                       tempMax: max,
+                       pressure: pres,
+                       humidity: hum, 
+                       seaLevel: tempDict[Parse.seaLevel.rawValue] as? Float, 
+                       groundLevel: tempDict[Parse.groundLevel.rawValue] as? Float, 
+                       kf: tempDict[Parse.kf.rawValue] as? Float)
   }
 }
