@@ -145,7 +145,7 @@
                         <constraints>
                             <constraint firstItem="MBc-yi-jrp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2CI-So-CQg"/>
                             <constraint firstAttribute="bottom" secondItem="MBc-yi-jrp" secondAttribute="bottom" id="ALa-Ev-vF6"/>
-                            <constraint firstItem="MBc-yi-jrp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OVD-dT-uc6"/>
+                            <constraint firstItem="MBc-yi-jrp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-44" id="OVD-dT-uc6"/>
                             <constraint firstItem="rLT-rQ-jqY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fOy-wi-Xod"/>
                             <constraint firstItem="rLT-rQ-jqY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="foz-Sw-dLY"/>
                             <constraint firstItem="MBc-yi-jrp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oVw-fi-Uoe"/>

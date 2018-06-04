@@ -22,7 +22,6 @@ struct Weather {
   }
   
   static func retrieveWeatherObject(from json: JSONdata) -> Weather? {
-    print("weather object: \(String(describing: json[Parse.weather.rawValue]))")
     guard let tempArray = json[Parse.weather.rawValue] as? [AnyObject],
       let tempDict = tempArray.first as? JSONdata,
       let id = tempDict[Parse.id.rawValue] as? Int,

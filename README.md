@@ -29,7 +29,7 @@ The following **assumptions** were made during development:
 
 Here's a walkthrough of implemented user stories:
 
-![](http://imgur.com/HM78nfS.gif)
+![](https://imgur.com/vlTKchy.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Steps to build and run
